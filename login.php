@@ -12,8 +12,8 @@
         <form action = "" method = "POST">
             <input type="text" name="user" , placeholder = "Username" class="input-control">
             <input type="password" name="pass" , placeholder = "Password" class="input-control">
-            <input type="submit" name="submit" , value = "Login" class="btn">
-            <h5 class= "donthave" >Belum Punya Akun ?</h5>
+            <input type="submit" name="submit" , value = "Login" class="btn"> <br>
+            <a href = "register.php" , class = donthave> Belum Punya Akun ? </a> 
         </form>
         <?php
           if(isset($_POST['submit'])){
