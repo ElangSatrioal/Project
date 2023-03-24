@@ -13,6 +13,7 @@
             <input type="text" name="user" , placeholder = "Username" class="input-control">
             <input type="password" name="pass" , placeholder = "Password" class="input-control">
             <input type="submit" name="submit" , value = "Login" class="btn">
+            <h5 class= "donthave" >Belum Punya Akun ?</h5>
         </form>
         <?php
           if(isset($_POST['submit'])){
@@ -21,8 +22,13 @@
             $user = $_POST['user'];
             $pass = $_POST['pass'];
 
-            $cek = mysqli_query($koneksi,"SELECT * FROM admin WHERE username = ' " .$user. "'  AND password = ' " .MD5($pass). "'" );
-            echo mysqli_num_rows($cek);
+            $cek = mysqli_query($koneksi,"SELECT * FROM admin WHERE username = '" .$user. "'  AND password = '" .$pass. "'" );
+            if(mysqli_num_rows($cek) > 0){
+                echo '<script>window.location= "dashboard.php"</script>';
+            }else{
+                echo '<script>alert("Username atau Pasword Anda Salah !")</script>';
+
+            }
           }
           
           
