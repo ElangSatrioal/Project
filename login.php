@@ -10,10 +10,9 @@
     <div class = "box-login">
         <h2>Login</h2>
         <form action = "" method = "POST">
-            <input type="text" name="user" , placeholder = "Username" class="input-control">
+            <input type="text" name="user" , placeholder = "Username Perusahaan" class="input-control", >
             <input type="password" name="pass" , placeholder = "Password" class="input-control">
             <input type="submit" name="submit" , value = "Login" class="btn"> <br>
-            <a href = "register.php" , class = donthave> Belum Punya Akun ? </a> 
         </form>
         <?php
           if(isset($_POST['submit'])){
@@ -22,17 +21,19 @@
             $user = $_POST['user'];
             $pass = $_POST['pass'];
 
+        
             $cek = mysqli_query($koneksi,"SELECT * FROM admin WHERE username = '" .$user. "'  AND password = '" .$pass. "'" );
             if(mysqli_num_rows($cek) > 0){
                 echo '<script>window.location= "dashboard.php"</script>';
             }else{
-                echo '<script>alert("Username atau Pasword Anda Salah !")</script>';
-
+                echo "<p style= ' color: red ; font-weight : bold; font-size: 12px ; background-color:pink; border-radius : 4px; padding:5px; margin-bottom:3px;'> Password atau Username Anda Salah !</p>"; 
             }
           }
+         ?>
+            <a href = "register.php" , class = donthave > Belum Punya Akun ? </a> <br>
           
           
-          ?>
+
     </div>
 </body>
 </html>
