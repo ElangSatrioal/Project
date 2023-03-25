@@ -24,7 +24,7 @@
             include 'db.php';
 
             $nama = $_POST['nama'];
-            $user = $_POST['user'];
+            $user = $_POST['user']; 
             $notelp = $_POST['notelp'];
             $email = $_POST['email'];
             $alamat = $_POST['alamat'];
