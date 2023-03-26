@@ -5,17 +5,19 @@
 <meta name="viewport" content = "width-device-width , initial-scale= 1" >
 <title> Login | AlamIndonesia </title>
 <link rel="stylesheet" type="text/css" href = "css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     </head>  
 <body id = "bg-login">
     <div class = "box-login">
         <h2>Login</h2>
         <form action = "" method = "POST">
-            <input type="text" name="user" , placeholder = "Username Perusahaan" class="input-control", >
-            <input type="password" name="pass" , placeholder = "Password" class="input-control">
+            <input type="text" name="user" , placeholder = "Username Perusahaan" class="input-control", required>
+            <input type="password" name="pass" , placeholder = "Password" class="input-control" required>
             <input type="submit" name="submit" , value = "Login" class="btn"> <br>
         </form>
         <?php
           if(isset($_POST['submit'])){
+            SESSION_start();
             include 'db.php';
 
             $user = $_POST['user'];
@@ -24,6 +26,10 @@
         
             $cek = mysqli_query($koneksi,"SELECT * FROM admin WHERE username = '" .$user. "'  AND password = '" .$pass. "'" );
             if(mysqli_num_rows($cek) > 0){
+                $d = mysqli_fetch_object($cek);
+                $_SESSION['status_login'] = true;
+                $_SESSION['a_global'] = $d;
+                $_SESSION['id'] = $d;
                 echo '<script>window.location= "dashboard.php"</script>';
             }else{
                 echo "<p style= ' color: red ; font-weight : bold; font-size: 12px ; background-color:pink; border-radius : 4px; padding:5px; margin-bottom:3px;'> Password atau Username Anda Salah !</p>"; 

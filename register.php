@@ -5,6 +5,7 @@
 <meta name="viewport" content = "width-device-width , initial-scale= 1" >
 <title> Register | AlamIndonesia </title>
 <link rel="stylesheet" type="text/css" href = "css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     </head>  
 <body id = "bg-login">
     <div class = "box-login">
@@ -21,6 +22,7 @@
         </form>
         <?php
           if(isset($_POST['submit'])){
+            SESSION_start();
             include 'db.php';
 
             $nama = $_POST['nama'];
@@ -45,6 +47,10 @@
             
             }else{
                 mysqli_query($koneksi,"INSERT INTO admin ( `nama_admin`, `username` , `no_telp`, `email` , `alamat` , `password`)VALUES( '$nama' , '$user' , '$notelp' , '$email' , '$alamat' , '$pass1' )");
+                $d = mysqli_fetch_object($cek);
+                $_SESSION['status_login'] = true;
+                $_SESSION['a_global'] = $d;
+                $_SESSION['id'] = $d;
                 echo '<script>window.location= "dashboard.php"</script>';
             }
 
