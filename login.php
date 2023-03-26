@@ -29,7 +29,7 @@
                 echo "<p style= ' color: red ; font-weight : bold; font-size: 12px ; background-color:pink; border-radius : 4px; padding:5px; margin-bottom:3px;'> Password atau Username Anda Salah !</p>"; 
             }
           }
-         ?>
+        ?>
             <a href = "register.php" , class = donthave > Belum Punya Akun ? </a> <br>
           
           
