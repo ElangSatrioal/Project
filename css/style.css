@@ -32,6 +32,8 @@
      padding:15px;
      box-sizing:border-box;
      border-radius:8px;
+     position:relative;
+     
   }
   .box-login h2{
      text-align:center;
@@ -53,7 +55,10 @@
     border-radius:5px;
     margin-bottom: 7px;
     font-weight: bold;
+    
+    
   }
+
   .donthave{
    font-size:13px;
    color:black;
@@ -90,3 +95,9 @@
       display:block;
       clear:both;
    }
+   .checkbox{
+      width:15px;
+      height:15px;
+      margin-bottom: 15px;
+   }
+   

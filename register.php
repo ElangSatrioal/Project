@@ -16,8 +16,10 @@
             <input type="text" name="notelp" , placeholder = "Nomor Telepon" class="input-control" , autocomplete="off" required>
             <input type="text" name="email" , placeholder = "Email" class="input-control" , autocomplete="off" required>
             <input type="text" name="alamat" , placeholder = "Alamat" class="input-control" , autocomplete="off" required>
-            <input type="password" name="pass1" , placeholder = "Password" class="input-control" required>
-            <input type="password" name="pass2" , placeholder = "Confirm Password" class="input-control" required>
+            <input id = "myInput" type="password" name="pass1" , placeholder = "Password" class="input-control" required>
+            <input type="checkbox" onclick="myFunction()" class="checkbox" > Show Password <br>
+            <input id = "myInput" type="password" name="pass2" , placeholder = "Confirm Password" class="input-control" required>
+            <input type="checkbox" onclick="myFunction()" class="checkbox" > Show Password <br>
             <input type="submit" name="submit" , value = "Create Account" class="btn">
         </form>
         <?php
@@ -62,5 +64,18 @@
           
 
     </div>
+    <script>
+        function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+        
+    </script>
+    
+    
 </body>
 </html>

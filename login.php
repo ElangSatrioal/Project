@@ -6,13 +6,15 @@
 <title> Login | AlamIndonesia </title>
 <link rel="stylesheet" type="text/css" href = "css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
     </head>  
 <body id = "bg-login">
     <div class = "box-login">
         <h2>Login</h2>
         <form action = "" method = "POST">
             <input type="text" name="user" , placeholder = "Username Perusahaan" class="input-control", required>
-            <input type="password" name="pass" , placeholder = "Password" class="input-control" required>
+            <input id="myInput" type="password" name="pass" , placeholder = "Password" ,  class="input-control" required>
+            <input type="checkbox" onclick="myFunction()" class="checkbox" > Show Password <br>
             <input type="submit" name="submit" , value = "Login" class="btn"> <br>
         </form>
         <?php
@@ -39,7 +41,18 @@
             <a href = "register.php" , class = donthave > Belum Punya Akun ? </a> <br>
           
           
+        </div>
 
-    </div>
+    <script>
+        function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+        
+    </script>
 </body>
 </html>
