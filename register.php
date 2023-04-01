@@ -16,10 +16,12 @@
             <input type="text" name="notelp" , placeholder = "Nomor Telepon" class="input-control" , autocomplete="off" required>
             <input type="text" name="email" , placeholder = "Email" class="input-control" , autocomplete="off" required>
             <input type="text" name="alamat" , placeholder = "Alamat" class="input-control" , autocomplete="off" required>
-            <input id = "myInput" type="password" name="pass1" , placeholder = "Password" class="input-control" required>
-            <input type="checkbox" onclick="myFunction()" class="checkbox" > Show Password <br>
-            <input id = "myInput" type="password" name="pass2" , placeholder = "Confirm Password" class="input-control" required>
-            <input type="checkbox" onclick="myFunction()" class="checkbox" > Show Password <br>
+            <input id = "password1" type="password" name="password1" , placeholder = "Password" class="input-control" required>
+            <input type="checkbox" id="showPassword1" onchange="togglePassword('password1', 'showPassword1')" class = "checkbox">
+	        <label for="showPassword1" class = "show">Show Password</label>
+            <input id = "password2" type="password" name="password2" , placeholder = "Confirm Password" class="input-control" required>
+            <input type="checkbox" id="showPassword2" onchange="togglePassword('password2', 'showPassword2')" class = "checkbox" >
+	        <label for="showPassword2" class = "show">Show Password</label><br>
             <input type="submit" name="submit" , value = "Create Account" class="btn">
         </form>
         <?php
@@ -32,8 +34,8 @@
             $notelp = $_POST['notelp'];
             $email = $_POST['email'];
             $alamat = $_POST['alamat'];
-            $pass1 = $_POST['pass1'];
-            $pass2 = $_POST['pass2'];
+            $pass1 = $_POST['password1'];
+            $pass2 = $_POST['password2'];
 
 
          
@@ -65,16 +67,17 @@
 
     </div>
     <script>
-        function myFunction() {
-  var x = document.getElementById("myInput");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
+        function togglePassword(passwordId, checkboxId) {
+	var passwordField = document.getElementById(passwordId);
+	var checkbox = document.getElementById(checkboxId);
+	if (checkbox.checked) {
+		passwordField.type = "text";
+	} else {
+		passwordField.type = "password";
+	}
 }
-        
     </script>
+    
     
     
 </body>

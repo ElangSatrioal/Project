@@ -13,8 +13,9 @@
         <h2>Login</h2>
         <form action = "" method = "POST">
             <input type="text" name="user" , placeholder = "Username Perusahaan" class="input-control", required>
-            <input id="myInput" type="password" name="pass" , placeholder = "Password" ,  class="input-control" required>
-            <input type="checkbox" onclick="myFunction()" class="checkbox" > Show Password <br>
+            <input id="password" type="password" name="password" , placeholder = "Password" ,  class="input-control" required>
+	          <input type="checkbox" id="showPassword" onchange="togglePassword('password', 'showPassword')" class = "checkbox">
+	          <label for="showPassword" class = "show">Show Password</label><br>
             <input type="submit" name="submit" , value = "Login" class="btn"> <br>
         </form>
         <?php
@@ -23,7 +24,7 @@
             include 'db.php';
 
             $user = $_POST['user'];
-            $pass = $_POST['pass'];
+            $pass = $_POST['password'];
 
         
             $cek = mysqli_query($koneksi,"SELECT * FROM admin WHERE username = '" .$user. "'  AND password = '" .$pass. "'" );
@@ -44,13 +45,14 @@
         </div>
 
     <script>
-        function myFunction() {
-  var x = document.getElementById("myInput");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
+        function togglePassword(passwordId, checkboxId) {
+	var passwordField = document.getElementById(passwordId);
+	var checkbox = document.getElementById(checkboxId);
+	if (checkbox.checked) {
+		passwordField.type = "text";
+	} else {
+		passwordField.type = "password";
+	}
 }
         
     </script>

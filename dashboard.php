@@ -18,7 +18,7 @@
             <li><a href = "Profil.php">Profil</a><li>
             <li><a href = "data-kategori.php">Data Kategori</a><li>
             <li><a href = "data-paket-wisata.php">Data Paket Wisata</a><li>
-            <li><a href = "data-paket-wisata.php">Log Out</a><li>
+            <li><a href = "login.php">Log Out</a><li>
         </ul>
         </div>
     </header>
