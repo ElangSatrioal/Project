@@ -3,14 +3,14 @@
     <head>
 <meta charset="utf-8">
 <meta name="viewport" content = "width-device-width , initial-scale= 1" >
-<title> Login | AlamIndonesia </title>
+<title> Admin Login | AlamIndonesia </title>
 <link rel="stylesheet" type="text/css" href = "css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 
     </head>  
 <body id = "bg-login">
     <div class = "box-login">
-        <h2>Login</h2>
+        <h2>Admin Login</h2>
         <form action = "" method = "POST">
             <input type="text" name="user" , placeholder = "Username Perusahaan" class="input-control", required>
             <input id="password" type="password" name="password" , placeholder = "Password" ,  class="input-control" required>
@@ -39,7 +39,7 @@
             }
           }
         ?>
-            <a href = "register.php" , class = donthave > Belum Punya Akun ? </a> <br>
+        
           
           
         </div>

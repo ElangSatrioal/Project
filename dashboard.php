@@ -1,3 +1,9 @@
+<?php
+session_start();
+if($_SESSION['status_login'] != true){
+    echo '<script>window.location="login.php"</script>';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,20 +13,33 @@
 <link rel="stylesheet" type="text/css" href = "css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Alkatra&display=swap" rel="stylesheet">
-    </head>  
+
+</head>  
 <body>
-    <!----header--->
     <header>
-        <div class="container">
-        <h1><b href = "Dashboard.php">AlamIndonesia</b></h1><br>
-        <ul>
-            <li><a href = "Dashboard.php">Dashboard</a><li>
-            <li><a href = "Profil.php">Profil</a><li>
-            <li><a href = "data-kategori.php">Data Kategori</a><li>
-            <li><a href = "data-paket-wisata.php">Data Paket Wisata</a><li>
-            <li><a href = "login.php">Log Out</a><li>
-        </ul>
+        <div class = "container">
+    <h1 href = "dashboard.php">AlamIndonesia</h1>
+    <ul>
+        <li><a href="dashboard.php">Dashboard</a></li>
+        <li><a href="profil.php">Profil</a></li>
+        <li><a href="datakategori.php">Data Kategori</a></li>
+        <li><a href="datawisata.php">Data Wisata</a></li>
+        <li><a href="login.php">Log Out</a></li>
+    </ul>
+</div>
+</header>
+<div class = "section">
+    <div class = "container">
+        <h3> Dashboard </h3>
+        <div class = "box">
+            <h4>Selamat Datang Admin <?php echo $_SESSION['a_global'] -> username ?> Di AlamIndonesia</h4>
         </div>
-    </header>
+    </div>
+</div>
+<footer>
+    <div class = "container">
+        <small>Copyright &copy; 2023 - AlamIndonesia.</small>
+    </div>
+</footer>
 </body>
 </html>

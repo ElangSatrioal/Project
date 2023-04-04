@@ -17,13 +17,21 @@
    font-family: 'Alkatra';
   }
   #bg-login{
-     background-image: url("Gunung Berkabut.jpg");
+     background-image: url("Gunung Berkabut 2.jpg");
      background-size: 100%;
      display:flex;
      height: 100vh;
      justify-content: center;
      align-items:center;
   }
+  #bg-login2{
+   background-image: url("Gunung Berkabut.jpg");
+   background-size: 100%;
+   display:flex;
+   height: 100vh;
+   justify-content: center;
+   align-items:center;
+}
   .box-login{ 
      width: 300px;
      min-height :200px;
@@ -58,9 +66,13 @@
     
     
   }
+  .btn:hover{  
+   background-color: #557153;
+   }
   .container ul li a:hover{
-   border-bottom: 3px solid #40513B;
-   transition: all .3s ease;
+   background-color: #fff; 
+   color: #40513B; 
+   border-radius: 3px;
   }
 
   .donthave{
@@ -68,10 +80,17 @@
    color:black;
    font-weight:bold;
    }
+   header {
+      
+      background-color: #40513B;
+      color:#fff;
+   }
 
    header h1 {
       float:left;
       padding:15px;
+      font-family: 'Alkatra';
+      cursor:pointer;
    }
    header ul{
       float:right;
@@ -81,13 +100,13 @@
    }
    header ul li a{
       display: inline-block;
-      padding:10px;
-      margin-bottom: 20px;
+      padding:20px;
+      margin-top: 10px;
       font-weight: bold;
-   }
+    }
    .container{
       width:80%;
-      margin:0 auto;
+      margin:0 auto; 
 
    }
    .container:after{
@@ -106,3 +125,20 @@
       cursor:pointer;
    }
    
+   .section{
+      padding : 25px 0;
+      
+   }
+   .box{
+      background-color: #fff;
+      border:1px solid #ccc;
+      padding: 15px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      margin: 10px 0;
+
+   }
+   .footer{
+      padding : 15px;
+      
+   }
