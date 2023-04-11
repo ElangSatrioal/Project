@@ -12,8 +12,8 @@
         <h2>User Register</h2>
         <form action = "" method = "POST">
             <input type="text" name="nama" , placeholder = "Nama" class="input-control" , autocomplete="off" required>
-            <input type="text" name="user" , placeholder = "Username" class="input-control" , autocomplete="off" required>
-            <input type="text" name="notelp" , placeholder = "Nomor Telepon" class="input-control" , autocomplete="off" required>
+            <input type="text" name="user" , placeholder = "Username" class="input-control" ,  autocomplete="off" required>
+            <input type="number" name="notelp" , placeholder = "Nomor Telepon" class="input-control" , id = "notelp" autocomplete="off" required>
             <input type="text" name="email" , placeholder = "Email" class="input-control" , autocomplete="off" required>
             <input type="text" name="alamat" , placeholder = "Alamat" class="input-control" , autocomplete="off" required>
             <input id = "password1" type="password" name="password1" , placeholder = "Password" class="input-control" required>
@@ -50,7 +50,7 @@
                 echo "<p style= ' color: red ; font-weight : bold; font-size: 12px ; background-color:pink; border-radius : 4px; padding:5px; margin-bottom:3px;'> Password Tidak Sama !</p>"; 
             
             }else{
-                mysqli_query($koneksi,"INSERT INTO user ( `nama_user`, `username` , `no_telp`, `email` , `alamat` , `password`)VALUES( '$nama' , '$user' , '$notelp' , '$email' , '$alamat' , '$pass1' )");
+                mysqli_query($koneksi,"INSERT INTO user ( `nama_user`, `username` , `no_telp`, `email` , `alamat` , `password`) VALUES ( '$nama' , '$user' , '$notelp' , '$email' , '$alamat' , '$pass1' )");
                 echo '<script>window.location= "index.php"</script>';
             }
 
@@ -72,6 +72,19 @@
 		passwordField.type = "password";
 	}
 }
+// Memilih input dengan id "angka"
+var inputAngka = document.getElementById("notelp");
+
+// Menambahkan event listener ketika input berubah
+inputAngka.addEventListener("input", function() {
+  // Menghapus karakter yang bukan angka
+  this.value = this.value.replace(/[^0-9]/g, "");
+
+  // Memotong input menjadi maksimal 5 karakter
+  if (this.value.length > 12) {
+    this.value = this.value.slice(0, 12);
+  }
+});
     </script>
     
     

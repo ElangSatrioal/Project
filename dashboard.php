@@ -18,13 +18,13 @@ if($_SESSION['status_login'] != true){
 <body>
     <header>
         <div class = "container">
-    <h1 href = "dashboard.php">AlamIndonesia</h1>
+    <h1><a href = "landing.html">AlamIndonesia</a></h1>
     <ul>
         <li><a href="dashboard.php">Dashboard</a></li>
         <li><a href="profil.php">Profil</a></li>
         <li><a href="datakategori.php">Data Kategori</a></li>
         <li><a href="datawisata.php">Data Wisata</a></li>
-        <li><a href="login.php">Log Out</a></li>
+        <li><a href="keluar.php">Log Out</a></li>
     </ul>
 </div>
 </header>
@@ -37,7 +37,7 @@ if($_SESSION['status_login'] != true){
     </div>
 </div>
 <footer>
-    <div class = "container">
+    <div class = "container-footer">
         <small>Copyright &copy; 2023 - AlamIndonesia.</small>
     </div>
 </footer>

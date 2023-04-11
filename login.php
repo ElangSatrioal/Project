@@ -25,15 +25,14 @@
 
             $user = $_POST['user'];
             $pass = $_POST['password'];
-
         
             $cek = mysqli_query($koneksi,"SELECT * FROM admin WHERE username = '" .$user. "'  AND password = '" .$pass. "'" );
             if(mysqli_num_rows($cek) > 0){
                 $d = mysqli_fetch_object($cek);
                 $_SESSION['status_login'] = true;
                 $_SESSION['a_global'] = $d;
-                $_SESSION['id'] = $d;
-                echo '<script>window.location= "dashboard.php"</script>';
+                $_SESSION['id'] = $d->id_admin ;
+                echo '<script>window.location = "dashboard.php"</script>';
             }else{
                 echo "<p style= ' color: red ; font-weight : bold; font-size: 12px ; background-color:pink; border-radius : 4px; padding:5px; margin-bottom:3px;'> Password atau Username Anda Salah !</p>"; 
             }
