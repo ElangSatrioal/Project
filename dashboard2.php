@@ -20,7 +20,7 @@ if($_SESSION['status_login'] != true){
         <div class = "container">
     <h1><a href = "landing.html">AlamIndonesia</a></h1>
     <ul>
-        <li><a href="dashboard2.php">Dashboard</a></li>
+        <li><a href="dashboard2.php" class = "active">Dashboard</a></li>
         <li><a href="profil.php" >Profil</a></li>
         <li><a href="datakategori.php" >Data Kategori</a></li>
         <li><a href="#" >Data Wisata</a></li>

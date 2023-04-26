@@ -3,7 +3,7 @@
     <head>
 <meta charset="utf-8">
 <meta name="viewport" content = "width-device-width , initial-scale= 1" >
-<title> Admin Login | AlamIndonesia </title>
+<title> Admin Travel Login | AlamIndonesia </title>
 <link rel="stylesheet" type="text/css" href = "css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 
@@ -11,9 +11,9 @@
     </head>  
 <body id = "bg-login">
     <div class = "box-login">
-        <h2>Admin Login</h2>
+        <h2>Travel Admin Login</h2>
         <form action = "" method = "POST">
-            <input type="text" name="user" , placeholder = "Username" class="input-control", required>
+            <input type="text" name="user" , placeholder = "Username Perusahaan" class="input-control", required>
             <input id="password" type="password" name="password" , placeholder = "Password" ,  class="input-control" required>
 	          <input type="checkbox" id="showPassword" onchange="togglePassword('password', 'showPassword')" class = "checkbox">
 	          <label for="showPassword" class = "show">Show Password</label><br>
@@ -27,13 +27,13 @@
             $user = mysqli_real_escape_string($koneksi,$_POST['user']);
             $pass = mysqli_real_escape_string($koneksi,$_POST['password']);
         
-            $cek = mysqli_query($koneksi,"SELECT * FROM admin WHERE username = '" .$user. "'  AND password = '" .$pass. "'" );
+            $cek = mysqli_query($koneksi,"SELECT * FROM adminbiro WHERE username = '" .$user. "'  AND password = '" .$pass. "' ");
             if(mysqli_num_rows($cek) > 0){
-                $d = mysqli_fetch_object($cek);
+                $f = mysqli_fetch_object($cek);
                 $_SESSION['status_login'] = true;
-                $_SESSION['a_global'] = $d;
-                $_SESSION['id'] = $d->id_admin ;
-                echo '<script>window.location = "dashboard.php"</script>';
+                $_SESSION['a_global'] = $f;
+                $_SESSION['id'] = $f->id_admin ;
+                echo '<script>window.location = "dashboardbiro.php"</script>';
             }else{
                 echo "<p style= ' color: red ; font-weight : bold; font-size: 12px ; background-color:pink; border-radius : 4px; padding:5px; margin-bottom:3px;'> Password atau Username Anda Salah !</p>"; 
             }

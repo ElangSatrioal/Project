@@ -1,7 +1,7 @@
 <?php
 session_start();
 if($_SESSION['status_login'] != true){
-    echo '<script>window.location="login.php"</script>';
+    echo '<script>window.location="loginbiro.php"</script>';
 }
 ?>
 <!DOCTYPE html>
@@ -20,11 +20,10 @@ if($_SESSION['status_login'] != true){
         <div class = "container">
     <h1><a href = "landing.html">AlamIndonesia</a></h1>
     <ul>
-        <li><a href="dashboard2.php">Dashboard</a></li>
-        <li><a href="profil.php" >Profil</a></li>
-        <li><a href="datakategori.php" >Data Kategori</a></li>
+        <li><a href="dashboardbiro2.php" class = "active">Dashboard</a></li>
+        <li><a href="profilbiro.php" >Profil</a></li>
         <li><a href="#" >Data Wisata</a></li>
-        <li><a href="keluar.php">Log Out</a></li>
+        <li><a href="keluarbiro.php">Log Out</a></li>
     </ul>
 </div>
 </header>

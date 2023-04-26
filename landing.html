@@ -61,12 +61,13 @@
         font-weight: bold;
         margin-right: 60px;
         text-decoration: none;
+        transition: 0.5s;
         
 
     }
     .nav ul a:hover{
         border-bottom: 4px solid #f9f9f9;
-        transition: all .1s ease;
+        transition: all 0.5s ;
 
     }
     .header{
@@ -76,6 +77,7 @@
         left:68%;
         transform: translate(-50%,-50%);
     }
+    
     .header h1{
         color:white;
         text-align:left;
@@ -110,7 +112,9 @@
                  </a>
             </div>
             <ul>
-                <a href = "login.php">Login as Admin</a>
+                <a href = "login.php">Login as Website Admin</a>
+                <a>|</a>
+                <a href="loginbiro.php"> Login as Travel Admin</a>
                 <a>|</a>
                 <a href = "loginuser.php">Login as User</a>
             </ul>

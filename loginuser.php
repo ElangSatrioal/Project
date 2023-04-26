@@ -6,6 +6,7 @@
 <title> User Login | AlamIndonesia </title>
 <link rel="stylesheet" type="text/css" href = "css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alkatra&display=swap" rel="stylesheet">
 
     </head>  
 <body id = "bg-login3">
@@ -23,8 +24,8 @@
             SESSION_start();
             include 'db.php';
 
-            $user = $_POST['user'];
-            $pass = $_POST['password'];
+            $user = mysqli_real_escape_string($koneksi,$_POST['user']);
+            $pass = mysqli_real_escape_string($koneksi,$_POST['password']);
 
         
             $cek = mysqli_query($koneksi,"SELECT * FROM user WHERE username = '" .$user. "'  AND password = '" .$pass. "'" );
@@ -39,7 +40,7 @@
         
         
         
-        <a href = "registeruser.php" , class = donthave > Belum Punya Akun ? </a> <br>
+        <a  class = donthave > Belum Punya Akun ? </a> <a href = "registeruser.php" , class= "buat"> Buat Akun</a>
     </div>
 
     <script>

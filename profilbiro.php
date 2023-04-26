@@ -2,10 +2,10 @@
 session_start();
 include 'db.php';
 if($_SESSION['status_login'] != true){
-    echo '<script>window.location="login.php"</script>';
+    echo '<script>window.location="loginbiro.php"</script>';
 }
-$query = mysqli_query($koneksi,"SELECT * FROM admin WHERE id_admin = '".$_SESSION['id']."' ");
-$d= mysqli_fetch_object($query);
+$query = mysqli_query($koneksi,"SELECT * FROM adminbiro WHERE id_admin = '".$_SESSION['id']."' ");
+$f= mysqli_fetch_object($query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,11 +23,10 @@ $d= mysqli_fetch_object($query);
         <div class = "container">
     <h1><a href = "landing.html">AlamIndonesia</a></h1>
     <ul>
-        <li><a href="dashboard2.php" >Dashboard</a></li>
-        <li><a href="profil.php" class = "active">Profil</a></li>
-        <li><a href="datakategori.php" >Data Kategori</a></li>
+        <li><a href="dashboardbiro2.php" >Dashboard</a></li>
+        <li><a href="profilbiro.php" class = "active">Profil</a></li>
         <li><a href="#" >Data Wisata</a></li>
-        <li><a href="keluar.php" >Log Out</a></li>
+        <li><a href="keluarbiro.php" >Log Out</a></li>
     </ul>
 </div>
 </header>
@@ -36,11 +35,11 @@ $d= mysqli_fetch_object($query);
         <h3> Profil </h3>
         <div class = "box">
             <form action="" method="POST">
-                <input type="text" name="nama" placeholder="Nama Lengkap" class = "input-control1" value = "<?php echo  $d-> nama_admin ?>" required>
-                <input type="text" name="user" placeholder="Username" class = "input-control" value = "<?php echo  $d-> username ?>" required>
-                <input type="number" name="hp" placeholder="Nomor HP" class = "input-control" value = "<?php echo  $d-> no_telp ?>" required id="notelp">
-                <input type="text" name="email" placeholder="Email" class = "input-control" value = "<?php echo $d-> email ?>" required>
-                <input type="text" name="alamat" placeholder="Alamat" class = "input-control" value = "<?php echo  $d-> alamat ?>" required>
+                <input type="text" name="nama" placeholder="Nama Lengkap" class = "input-control1" value = "<?php echo  $f-> nama_admin ?>" required>
+                <input type="text" name="user" placeholder="Username" class = "input-control" value = "<?php echo  $f-> username ?>" required>
+                <input type="number" name="hp" placeholder="Nomor HP" class = "input-control" value = "<?php echo  $f-> no_telp ?>" required id="notelp">
+                <input type="text" name="email" placeholder="Email" class = "input-control" value = "<?php echo $f-> email ?>" required>
+                <input type="text" name="alamat" placeholder="Alamat" class = "input-control" value = "<?php echo  $f-> alamat ?>" required>
                 <input type="submit" name="submit" , value = "Add Change" class="btn">
             </form>
             <?php
@@ -53,13 +52,13 @@ $d= mysqli_fetch_object($query);
                 $alamat = $_POST['alamat'];
                 
                 
-            $update = mysqli_query($koneksi,"UPDATE admin SET
+            $update = mysqli_query($koneksi,"UPDATE adminbiro SET
             nama_admin = '".$nama."',
             username = '".$user."',
             no_telp = '".$hp."',
             email = '".$email."',
             alamat = '".$alamat."'
-            WHERE id_admin = '".$d -> id_admin. "' ");
+            WHERE id_admin = '".$f -> id_admin. "' ");
             
             if($update){
                 echo '<script>alert("Profil Telah Diperbarui")</script>';
@@ -92,13 +91,13 @@ $d= mysqli_fetch_object($query);
                     echo "<p style= 'margin-top : 5px ; color: red ; font-weight : bold; font-size: 12px ; background-color:pink; border-radius : 4px; padding:5px; margin-bottom:3px;'> Password Tidak Sama !</p>"; 
                 
                 }else{
-                    $u_pass = mysqli_query($koneksi,"UPDATE admin SET
+                    $u_pass = mysqli_query($koneksi,"UPDATE adminbiro SET
                     password = '".$pass1."'
-                    WHERE id_admin = '".$d-> id_admin. "' ");
+                    WHERE id_admin = '".$f-> id_admin. "' ");
                     
                     if($u_pass){
                         echo '<script>alert("Profil Telah Diperbarui")</script>';
-                        echo '<script>window.location ="profil.php"</script>';
+                        echo '<script>window.location ="profilbiro.php"</script>';
                     }else{
                         echo "Gagal" .mysqli_error($koneksi);
                         
