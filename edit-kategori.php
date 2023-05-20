@@ -14,7 +14,7 @@ $k = mysqli_fetch_object($kategori);
 <html lang="en">
     <head>
 <meta charset="utf-8">
-<meta name="viewport" content = "width-device-width , initial-scale= 1" >
+<meta name="viewport" content = "width=device-width , initial-scale= 1" >
 <title> AlamIndonesia </title>
 <link rel="stylesheet" type="text/css" href = "css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
@@ -29,7 +29,6 @@ $k = mysqli_fetch_object($kategori);
         <li><a href="dashboard2.php" >Dashboard</a></li>
         <li><a href="profil.php" >Profil</a></li>
         <li><a href="datakategori.php" class = "active">Data Kategori</a></li>
-        <li><a href="#" >Data Wisata</a></li>
         <li><a href="keluar.php" >Log Out</a></li>
     </ul>
 </div>
@@ -39,7 +38,7 @@ $k = mysqli_fetch_object($kategori);
         <h3> Edit Kategori </h3>
         <div class = "box">
             <form action="" method="POST">
-                <input type="text" name="nama" placeholder="Edit Nama Kategori" class = "input-control1" value = "<?php echo $k -> nama_kategori ?>"required>
+                <input type="text" name="nama" placeholder="Edit Nama Kategori" class = "input-control1" id = "myInput" value = "<?php echo $k -> nama_kategori ?>"required>
                 <input type="submit" name="submit" , value = "Submit" class="btn">
             </form>
             <?php
@@ -68,5 +67,17 @@ $k = mysqli_fetch_object($kategori);
         <small>Copyright &copy; 2023 - AlamIndonesia.</small>
     </div>
 </footer>
+
+<script>
+  var input = document.getElementById("myInput");
+  input.addEventListener("input", function() {
+    var words = input.value.split(" ");
+    for (var i = 0; i < words.length; i++) {
+      words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
+    }
+    input.value = words.join(" ");
+  });
+</script>
+
 </body>
 </html>

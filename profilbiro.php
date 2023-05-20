@@ -11,7 +11,7 @@ $f= mysqli_fetch_object($query);
 <html lang="en">
     <head>
 <meta charset="utf-8">
-<meta name="viewport" content = "width-device-width , initial-scale= 1" >
+<meta name="viewport" content = "width=device-width , initial-scale= 1" >
 <title> AlamIndonesia </title>
 <link rel="stylesheet" type="text/css" href = "css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@ $f= mysqli_fetch_object($query);
     <ul>
         <li><a href="dashboardbiro2.php" >Dashboard</a></li>
         <li><a href="profilbiro.php" class = "active">Profil</a></li>
-        <li><a href="#" >Data Wisata</a></li>
+        <li><a href="data-wisata.php" >Data Wisata</a></li>
         <li><a href="keluarbiro.php" >Log Out</a></li>
     </ul>
 </div>
@@ -35,8 +35,8 @@ $f= mysqli_fetch_object($query);
         <h3> Profil </h3>
         <div class = "box">
             <form action="" method="POST">
-                <input type="text" name="nama" placeholder="Nama Lengkap" class = "input-control1" value = "<?php echo  $f-> nama_admin ?>" required>
-                <input type="text" name="user" placeholder="Username" class = "input-control" value = "<?php echo  $f-> username ?>" required>
+                <input type="text" name="user" placeholder="Username" class = "input-control1" value = "<?php echo  $f-> username ?>" required>
+                <input type="text" name="nama" placeholder="Nama Lengkap" class = "input-control" value = "<?php echo  $f-> nama_admin ?>" required>
                 <input type="number" name="hp" placeholder="Nomor HP" class = "input-control" value = "<?php echo  $f-> no_telp ?>" required id="notelp">
                 <input type="text" name="email" placeholder="Email" class = "input-control" value = "<?php echo $f-> email ?>" required>
                 <input type="text" name="alamat" placeholder="Alamat" class = "input-control" value = "<?php echo  $f-> alamat ?>" required>
@@ -58,11 +58,12 @@ $f= mysqli_fetch_object($query);
             no_telp = '".$hp."',
             email = '".$email."',
             alamat = '".$alamat."'
-            WHERE id_admin = '".$f -> id_admin. "' ");
+            WHERE id_admin = '".$f -> id_admin
+            . "' ");
             
             if($update){
                 echo '<script>alert("Profil Telah Diperbarui")</script>';
-                echo '<script>window.location ="profil.php"</script>';
+                echo '<script>window.location ="profilbiro.php"</script>';
             }else{
                 echo "Gagal" .mysqli_error($koneksi);
             }

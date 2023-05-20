@@ -11,7 +11,7 @@ $d= mysqli_fetch_object($query);
 <html lang="en">
     <head>
 <meta charset="utf-8">
-<meta name="viewport" content = "width-device-width , initial-scale= 1" >
+<meta name="viewport" content = "width=device-width , initial-scale= 1" >
 <title> AlamIndonesia </title>
 <link rel="stylesheet" type="text/css" href = "css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
@@ -26,7 +26,6 @@ $d= mysqli_fetch_object($query);
         <li><a href="dashboard2.php" >Dashboard</a></li>
         <li><a href="profil.php" class = "active">Profil</a></li>
         <li><a href="datakategori.php" >Data Kategori</a></li>
-        <li><a href="#" >Data Wisata</a></li>
         <li><a href="keluar.php" >Log Out</a></li>
     </ul>
 </div>

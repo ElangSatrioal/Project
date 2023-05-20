@@ -2,16 +2,26 @@
 <html lang="en">
     <head>
 <meta charset="utf-8">
-<meta name="viewport" content = "width-device-width , initial-scale= 1" >
+<meta name="viewport" content = "width=device-width , initial-scale= 1" >
 <title> User Login | AlamIndonesia </title>
 <link rel="stylesheet" type="text/css" href = "css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Alkatra&display=swap" rel="stylesheet">
+<link href="fontawesome/css/all.css" rel = "stylesheet">
 
+    
     </head>  
 <body id = "bg-login3">
+<div class = "wrapper">
+        <div class = "nav">
+            <div class = "logo">
+                  <a href="Landing.html">
+                    <p>AlamIndonesia</p>
+                 </a>
+            </div>
+</div>
     <div class = "box-login">
-        <h2>User Login</h2>
+        <h2><i class="fa-solid fa-user"></i> User Login</h2>
         <form action = "" method = "POST">
             <input type="text" name="user" , placeholder = "Username" class="input-control", required>
             <input id="password" type="password" name="password" , placeholder = "Password" ,  class="input-control" required>

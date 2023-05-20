@@ -2,17 +2,27 @@
 <html lang="en">
     <head>
 <meta charset="utf-8">
-<meta name="viewport" content = "width-device-width , initial-scale= 1" >
+<meta name="viewport" content = "width=device-width , initial-scale= 1" >
 <title> User Register | AlamIndonesia </title>
 <link rel="stylesheet" type="text/css" href = "css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alkatra&display=swap" rel="stylesheet">
+<link href="fontawesome/css/all.css" rel = "stylesheet">
     </head>  
 <body id = "bg-login2">
+<div class = "wrapper">
+        <div class = "nav">
+            <div class = "logo">
+                  <a href="Landing.html">
+                    <p>AlamIndonesia</p>
+                 </a>
+            </div>
+</div>
     <div class = "box-login">
-        <h2>User Register</h2>
+     <h2><i class="fa-solid fa-user"></i> User Register</h2>
         <form action = "" method = "POST">
-            <input type="text" name="nama" , placeholder = "Nama" class="input-control" , autocomplete="off" required>
             <input type="text" name="user" , placeholder = "Username" class="input-control" ,  autocomplete="off" required>
+            <input type="text" name="nama" , placeholder = "Nama" class="input-control" , autocomplete="off" required>
             <input type="number" name="notelp" , placeholder = "Nomor Telepon" class="input-control" , id = "notelp" autocomplete="off" required>
             <input type="text" name="email" , placeholder = "Email" class="input-control" , autocomplete="off" required>
             <input type="text" name="alamat" , placeholder = "Alamat" class="input-control" , autocomplete="off" required>
@@ -50,7 +60,8 @@
                 echo "<p style= ' color: red ; font-weight : bold; font-size: 12px ; background-color:pink; border-radius : 4px; padding:5px; margin-bottom:3px;'> Password Tidak Sama !</p>"; 
             
             }else{
-                mysqli_query($koneksi,"INSERT INTO user ( `nama_user`, `username` , `no_telp`, `email` , `alamat` , `password`) VALUES ( '$nama' , '$user' , '$notelp' , '$email' , '$alamat' , '$pass1' )");
+                mysqli_query($koneksi,"INSERT INTO user ( `nama_user`, `username` , `no_telp`, `email` , `alamat` , `password`)
+                VALUES ( '$nama' , '$user' , '$notelp' , '$email' , '$alamat' , '$pass1' )");
                 echo '<script>window.location= "index.php"</script>';
             }
 
@@ -59,35 +70,34 @@
         ?>
            
           
+        </div>
+        <script>
+            function togglePassword(passwordId, checkboxId) {
+        var passwordField = document.getElementById(passwordId);
+        var checkbox = document.getElementById(checkboxId);
+        if (checkbox.checked) {
+            passwordField.type = "text";
+        } else {
+            passwordField.type = "password";
+        }
+    }
+    // Memilih input dengan id "angka"
+    var inputAngka = document.getElementById("notelp");
+    
+    // Menambahkan event listener ketika input berubah
+    inputAngka.addEventListener("input", function() {
+      // Menghapus karakter yang bukan angka
+      this.value = this.value.replace(/[^0-9]/g, "");
+    
+      // Memotong input menjadi maksimal 5 karakter
+      if (this.value.length > 12) {
+        this.value = this.value.slice(0, 12);
+      }
+    });
+        </script>
+        
+        
+        
+    </body>
+    </html>
           
-
-    </div>
-    <script>
-        function togglePassword(passwordId, checkboxId) {
-	var passwordField = document.getElementById(passwordId);
-	var checkbox = document.getElementById(checkboxId);
-	if (checkbox.checked) {
-		passwordField.type = "text";
-	} else {
-		passwordField.type = "password";
-	}
-}
-// Memilih input dengan id "angka"
-var inputAngka = document.getElementById("notelp");
-
-// Menambahkan event listener ketika input berubah
-inputAngka.addEventListener("input", function() {
-  // Menghapus karakter yang bukan angka
-  this.value = this.value.replace(/[^0-9]/g, "");
-
-  // Memotong input menjadi maksimal 5 karakter
-  if (this.value.length > 12) {
-    this.value = this.value.slice(0, 12);
-  }
-});
-    </script>
-    
-    
-    
-</body>
-</html>
