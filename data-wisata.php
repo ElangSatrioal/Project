@@ -46,7 +46,7 @@ $f= mysqli_fetch_object($query);
                         <th>Tarif</th>
                         <th width = "100px">Gambar</th>
                         <th>Status</th>
-                        <th width = 160px >Action</th>
+                        <th width = "173px" >Action</th>
             
                     </tr>
                 </thead>
@@ -61,11 +61,11 @@ $f= mysqli_fetch_object($query);
                         <td><?php echo $no++ ?></td>
                         <td><?php echo $row['nama_kategori']?></td>
                         <td><?php echo $row['nama_wisata']?></td>
-                        <td><?php echo $row['tarif']?></td>
+                        <td>Rp. <?php echo $row['tarif']?></td>
                         <td><a href= "wisata/<?php echo $row['gambar'] ?>" target = "_blank"><img  src = "wisata/<?php echo $row['gambar'] ?>" width = "80px" style="border-radius:5px;"></a></td>
                         <td><?php echo ($row['status_wisata'] == 0 )? 'Tidak Tersedia':'Tersedia';?></td>
-                        <td height="23px"> 
-                            <a href="edit-wisata.php?id=<?php echo $row['id_wisata'] ?>" class = "btn-small"><i class="fa-solid fa-pen-to-square"></i> Edit</a> || 
+                        <td height="35px"> 
+                            <a href="edit-wisata.php?id=<?php echo $row['id_wisata'] ?>" class = "btn-small"><i class="fa-solid fa-pen-to-square"></i> Edit</a> 
                             <a href="proses-hapus.php?idp=<?php echo $row['id_wisata']?>" onclick = "return confirm('Hapus Paket Wisata ?')" class = "btn-small"><i class="fa-solid fa-trash"></i> Hapus</a>
                         </td>
                         

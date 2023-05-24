@@ -39,7 +39,7 @@ if($_SESSION['status_login'] != true){
                     <tr>
                         <th>No</th>
                         <th>Kategori</th>
-                        <th width = "160px">Action</th>
+                        <th width = "173px">Action</th>
             
                     </tr>
                 </thead>
@@ -53,8 +53,8 @@ if($_SESSION['status_login'] != true){
                     <tr>
                         <td><?php echo $no++ ?></td>
                         <td><?php echo $row['nama_kategori']?></td>
-                        <td height="30px"> 
-                            <a href="edit-kategori.php?id=<?php echo $row['id_kategori'] ?>" class = "btn-small"><i class="fa-solid fa-pen-to-square"></i> Edit</a> || 
+                        <td height="35px"> 
+                            <a href="edit-kategori.php?id=<?php echo $row['id_kategori'] ?>" class = "btn-small"><i class="fa-solid fa-pen-to-square"></i> Edit</a> 
                             <a href="proses-hapus.php?idk=<?php echo $row['id_kategori']?>" onclick = "return confirm('Hapus Kategori ?')" class = "btn-small"><i class="fa-solid fa-trash"></i> Hapus</a>
                         </td>
                         

@@ -21,7 +21,7 @@ if($_SESSION['status_login'] != true){
     }
 
     .box{
-       width: 1250px;
+       width: 1186px;
        height: 375px;
         
     }
@@ -36,7 +36,7 @@ if($_SESSION['status_login'] != true){
 
     .btn-start{
         font-size: 18px;
-        border-radius: 7px;
+        border-radius: 30px;
         justify-content: center;
         align-items: center;
         margin:30px;
@@ -48,7 +48,7 @@ if($_SESSION['status_login'] != true){
     }
 
     a{
-        padding:15px;
+        padding:15px 20px;
     }
 
     .btn-start:hover{

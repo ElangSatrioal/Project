@@ -317,7 +317,7 @@
       padding:5px 10px;
     }
     .btn-small{
-      padding:7px 8px;
+      padding: 8px 14px;
       background-color: #40513B;
       border:none;
       cursor:pointer;
@@ -325,9 +325,10 @@
       margin-bottom: 7px;
       font-weight: bold;
       transition: 0.5s;
-      font-size: small; 
+      font-size: 13px; 
       color:#fff;
       }
+
       .btn-small:hover{  
          color:#40513B;
          background-color: #ABC35C;
@@ -366,7 +367,7 @@
     .search{
       margin-top: 80px; /* sesuaikan nilai margin-top sesuai dengan tinggi header */
       margin-bottom: 10px;
-      padding: 5px 0;
+      padding: 5px 250px;
       background-color: #fff;
       border: 1px solid #ccc;
       text-align: center;
@@ -387,18 +388,18 @@
       box-sizing:border-box;
       border-radius:7px;
       margin-top: 15px;
-      border-width: 2px;
       border-color: #40513B;
       border: 3px solid gray;
       transition: all 0.5s ease-in-out;
-      margin-right: 3px;
-      
+      margin-right: -4px;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
     }
 
     .search input[type=text]:focus{
-      border: 3px solid #40513B;
       outline: none;
       box-shadow: none;
+      border: 3px solid #40513B;
     }
 
     .search input[type=submit]{
@@ -406,7 +407,7 @@
     }
 
     .cari{
-      padding:12px 17px 13px 17px;
+      padding:10px 15px 10px 15px;
       background-color: #40513B;
       border:none;
       cursor:pointer;
@@ -416,6 +417,10 @@
       transition: 0.5s; 
       color:#fff;
       font-size: small;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border: 3px solid #40513B;
+      border-left: 0px;
     }
 
     .cari:hover{
