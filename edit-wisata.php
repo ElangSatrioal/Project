@@ -58,7 +58,7 @@ $p = mysqli_fetch_object($wisata);
                     <option value= "<?php echo $r['id_kategori']?>" <?php echo ($r['id_kategori'] == $p->id_kategori)? 'selected':''; ?>><?php echo $r['nama_kategori'] ?></option>
                     <?php } ?>
                 </select>
-                <input type="text" name = "nama" class = "input-control" placeholder = "Nama Paket Wisata" id = "myInput" value = "<?php echo $p->nama_wisata ?>" required maxlength="20">
+                <input type="text" name = "nama" class = "input-control" placeholder = "Nama Paket Wisata" id = "myInput" value = "<?php echo $p->nama_wisata ?>" required maxlength="25">
                 <input type="number" name = "tarif" class = "input-control" placeholder = "Tarif" value = "<?php echo $p->tarif ?>" required>
                 <textarea class = "input-control" name = "deskripsi" placeholder = "Deskripsi" ><?php echo $p-> deskripsi?></textarea><br>
                 <select class = "input-control" name = "status"> 

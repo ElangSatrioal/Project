@@ -62,7 +62,7 @@
             }else{
                 mysqli_query($koneksi,"INSERT INTO user ( `nama_user`, `username` , `no_telp`, `email` , `alamat` , `password`)
                 VALUES ( '$nama' , '$user' , '$notelp' , '$email' , '$alamat' , '$pass1' )");
-                echo '<script>window.location= "index.php"</script>';
+                echo '<script>window.location= "dashboarduser.php"</script>';
             }
 
            }

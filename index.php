@@ -19,7 +19,7 @@ include 'db.php';
         <div class = "container">
     <h1><a href = "landing.html">AlamIndonesia</a></h1>
     <ul>
-        <li><a href="index.php" class = "active">Wisata</a></li>
+        <li><a href="index.php" class = "active">Reset</a></li>
     </ul>
 </div>
 </header>
@@ -72,7 +72,7 @@ include 'db.php';
                         <img src="wisata/<?php echo $p['gambar']?>">
                         <p class="nama"><?php echo $p['nama_wisata']?></p>
                         <p class = "nama-biro"> <?php echo $p['username']?></p>
-                        <p class = "harga">Rp. <?php echo $p['tarif']?></p>
+                        <p class = "harga">Rp. <?php echo number_format($p['tarif']) ?></p>
                     </div>
                     </a>
                     <?php }}else{ ?>

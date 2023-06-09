@@ -1,6 +1,8 @@
 <?php
 error_reporting(0);
 include 'db.php'; 
+$wisata = mysqli_query($koneksi, "SELECT * FROM tempat_wisata LEFT JOIN adminbiro USING (id_admin) WHERE id_wisata = '".$_GET['id']."' ");
+$p = mysqli_fetch_object($wisata);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +22,7 @@ include 'db.php';
         <div class = "container">
     <h1><a href = "landing.html">AlamIndonesia</a></h1>
     <ul>
-        <li><a href="index.php" >Reset</a></li>
+        <li><a href="index.php" >Kembali</a></li>
     </ul>
 </div>
 </header>
@@ -35,59 +37,31 @@ include 'db.php';
         </div>
      </div>
 
-      <!--- kategori --->
-      <div class = "section">
-            <div class = "container">
-                <h3 class = "kategori-wisata">Kategori</h3>
-                <div class = "box">
-                    <?php 
-                    $kategori = mysqli_query($koneksi, "SELECT * FROM kategori ORDER BY id_kategori ASC");
-                    if(mysqli_num_rows($kategori) > 0){
-                        while($k = mysqli_fetch_array($kategori)){
-                    ?>
-                    <a href="wisata.php?kat=<?php echo $k['id_kategori'] ?>">
-                       <div class = "col-5">
-                           <img src="ikon kategori.png" width = "40px" style="margin-bottom:5px;">
-                           <p><?php echo $k['nama_kategori']?></p>
-                       </div>
-                    </a>
-                <?php }} else{?>
-                    <p>Tidak Ada Kategori</p>
-                    <?php } ?>
+
+      <!--- detail-wisata --->
+
+      <div class="section">
+        <div class="container">
+            <h3 class = "kategori-wisata">Detail Paket Wisata</h3>
+            <div class="box">
+                <div class="col-2">
+                    <img src="wisata/<?php echo $p ->gambar ?>" width = "100%">
+                </div>
+                <div class="col-2">
+                    <h3 class = "nama-wisata"><?php echo $p ->nama_wisata ?></h3>
+                    <h4> <?php echo $p ->username?></h4>
+                    <h4>Rp. <?php echo number_format($p ->tarif) ?></h4>
+                    <p>Deskripsi Paket Wisata :
+                    <?php echo $p ->deskripsi ?>
+                    </p>
+                    <p><a href="https://api.whatsapp.com/send?phone=<?php echo $p ->no_telp ?>&text=Saya Ingin Memesan Paket Wisata Anda" target="_blank">
+                    <i class="fa-brands fa-whatsapp fa-2xl"></i> Pesan Via WhatsApp: 
+                    <?php echo $p ->no_telp ?></a></p>
                 </div>
             </div>
         </div>
+      </div>
 
-
-        <!--- wisata --->
-
-        <div class="section">
-            <div class="container">
-                <h3 class = "daftar-wisata2">Daftar Wisata</h3>
-                <div class="box">
-                    <?php 
-                    if($_GET['search'] != '' || $_GET['kat'] != ''){
-                        $where = " AND ( nama_wisata LIKE '%".$_GET['search']."%' OR deskripsi LIKE '%".$_GET['search']."%' OR username LIKE '%".$_GET['search']."%' ) 
-                        AND id_kategori LIKE '%".$_GET['kat']."%' ";
-                    }
-                    $wisata = mysqli_query($koneksi, "SELECT * FROM tempat_wisata  LEFT JOIN adminbiro USING (id_admin) WHERE status_wisata = 1  $where  ORDER BY id_wisata ASC ");
-                    if(mysqli_num_rows($wisata) > 0){
-                        while($p = mysqli_fetch_array($wisata)){
-                    ?>
-                    <a href="detail-wisata.php?id=<?php echo $p['id_wisata']?>">
-                    <div class="col-4">
-                        <img src="wisata/<?php echo $p['gambar']?>">
-                        <p class="nama"><?php echo $p['nama_wisata']?></p>
-                        <p class = "nama-biro"> <?php echo $p['username']?></p>
-                        <p class = "harga">Rp. <?php echo number_format($p['tarif']) ?></p>
-                    </div>
-                    </a>
-                    <?php }}else{ ?>
-                        <p>Wisata Tidak Ditemukan</p>
-                        <?php } ?>    
-                    </div>
-            </div>
-        </div>
         <!--- footer --->
         <div class = "footer">
             <div class = "footer-container">

@@ -37,7 +37,7 @@ $f= mysqli_fetch_object($query);
             <form action="" method="POST">
                 <input type="text" name="user" placeholder="Username" class = "input-control1" value = "<?php echo  $f-> username ?>" required>
                 <input type="text" name="nama" placeholder="Nama Lengkap" class = "input-control" value = "<?php echo  $f-> nama_admin ?>" required>
-                <input type="number" name="hp" placeholder="Nomor HP" class = "input-control" value = "<?php echo  $f-> no_telp ?>" required id="notelp">
+                <input type="text" name="hp" placeholder="Nomor HP" class = "input-control" value = "<?php echo  $f-> no_telp ?>" required id="notelp">
                 <input type="text" name="email" placeholder="Email" class = "input-control" value = "<?php echo $f-> email ?>" required>
                 <input type="text" name="alamat" placeholder="Alamat" class = "input-control" value = "<?php echo  $f-> alamat ?>" required>
                 <input type="submit" name="submit" , value = "Add Change" class="btn">
@@ -122,19 +122,23 @@ $f= mysqli_fetch_object($query);
     </div>
 </footer>
 <script>
-    // Memilih input dengan id "angka"
+    
+   // Memilih input dengan id "notelp"
 var inputAngka = document.getElementById("notelp");
 
 // Menambahkan event listener ketika input berubah
 inputAngka.addEventListener("input", function() {
-  // Menghapus karakter yang bukan angka
-  this.value = this.value.replace(/[^0-9]/g, "");
 
-  // Memotong input menjadi maksimal 5 karakter
-  if (this.value.length > 12) {
-    this.value = this.value.slice(0, 12);
+  // Menghapus semua karakter non-digit kecuali karakter "+"
+  this.value = this.value.replace(/[^+\d]/g, '');
+
+  // Memotong input menjadi maksimal 14 karakter
+  if (this.value.length > 14) {
+    this.value = this.value.slice(0, 14);
   }
 });
+
+
 function togglePassword(passwordId, checkboxId) {
 	var passwordField = document.getElementById(passwordId);
 	var checkbox = document.getElementById(checkboxId);

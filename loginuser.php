@@ -40,7 +40,7 @@
         
             $cek = mysqli_query($koneksi,"SELECT * FROM user WHERE username = '" .$user. "'  AND password = '" .$pass. "'" );
             if(mysqli_num_rows($cek) > 0){
-                echo '<script>window.location= "index.php"</script>';
+                echo '<script>window.location= "dashboarduser.php"</script>';
             }else{
                 echo "<p style= ' color: red ; font-weight : bold; font-size: 12px ; background-color:pink; border-radius : 4px; padding:5px; margin-bottom:3px;'> Password atau Username Anda Salah !</p>"; 
             }

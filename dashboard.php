@@ -45,12 +45,8 @@ if($_SESSION['status_login'] != true){
         transition: 0.5s;
         margin-left:525px;
         font-weight: bold;
+        padding:16px 30px;
     }
-
-    a{
-        padding:15px 20px;
-    }
-
     .btn-start:hover{
         color:#40513B;
         background-color: #ABC35C;

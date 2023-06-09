@@ -50,7 +50,7 @@ $f= mysqli_fetch_object($query);
                     <option value= "<?php echo $r['id_kategori']?>"><?php echo $r['nama_kategori'] ?></option>
                     <?php } ?>
                 </select>
-                <input type="text" name = "nama" class = "input-control" placeholder = "Nama Paket Wisata" id = "myInput" maxlength="20" required>
+                <input type="text" name = "nama" class = "input-control" placeholder = "Nama Paket Wisata" id = "myInput" maxlength="25" required>
                 <input type="number" name = "tarif" class = "input-control" placeholder = "Tarif" oninput="formatNumber(this)" required>
                 <textarea class = "input-control" name = "deskripsi" placeholder = "Deskripsi"></textarea><br>
                 <select class = "input-control" name = "status"> 

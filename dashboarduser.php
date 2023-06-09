@@ -1,9 +1,3 @@
-<?php
-session_start();
-if($_SESSION['status_login'] != true){
-    echo '<script>window.location="loginbiro.php"</script>';
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,15 +7,15 @@ if($_SESSION['status_login'] != true){
 <link rel="stylesheet" type="text/css" href = "css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Alkatra&display=swap" rel="stylesheet">
-<link href="fontawesome/css/all.css" rel = "stylesheet">
+
 <style>
-    h4{
+     h4{
     font-size: 30px;
         
     }
 
     .box{
-       width: 1186px;
+        width: 1186px;
        height: 375px;
         
     }
@@ -59,20 +53,14 @@ if($_SESSION['status_login'] != true){
     <header>
         <div class = "container">
     <h1><a href = "landing.html">AlamIndonesia</a></h1>
-    <ul>
-        <li><a href="dashboardbiro2.php" class = "active">Dashboard</a></li>
-        <li><a href="profilbiro.php" >Profil</a></li>
-        <li><a href="data-wisata.php" >Data Wisata</a></li>
-        <li><a href="keluarbiro.php">Log Out</a></li>
-    </ul>
 </div>
 </header>
 <div class = "section">
     <div class = "container">
         <h3> Dashboard </h3>
         <div class = "box">
-            <h4> Selamat Datang !<br>Admin <?php echo $_SESSION['a_global'] -> username ?> Di AlamIndonesia</h4>
-            <p><a href="data-wisata.php" class = "btn-start">Start Now</a></p>
+            <h4> Selamat Datang !<br> Silahkan Pilih Paket Wisata Yang Anda Inginkan</h4>
+            <p><a href="index.php" class = "btn-start">Start Now</a></p>
         </div>
     </div>
 </div>
