@@ -86,8 +86,20 @@
     }
     
     .nav ul a:hover{
-        border-bottom: 4px solid #092026;
         color: #092026;
+    }
+
+    .nav ul a::after{
+        content: '';
+        display:block;
+        padding-bottom: 8px;
+        border-bottom: 3px solid #092026;
+        transform: scaleX(0);
+        transition: 0.5s;
+    }
+
+    .nav ul a:hover::after{
+        transform: scaleX(0.5);
     }
 
     .header{
