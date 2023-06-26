@@ -83,7 +83,7 @@ include 'db.php';
                     </div>
                     </a>
                     <?php }}else{ ?>
-                        <p>Wisata Tidak Ditemukan</p>
+                        <p>Tidak Ada Hasil Untuk  "<?php echo $_GET['search']?>"</p>
                         <?php } ?>    
                     </div>
             </div>
