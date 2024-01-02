@@ -406,17 +406,16 @@ h3.daftar-wisata2 {
 }
 
 .col-5 {
-  width: 10%;
   height: 100px;
   text-align: center;
   font-weight: bold;
-  float: left;
   padding: 15px 22px;
   box-sizing: border-box;
-  margin-left: 65px;
+  margin-left: 80px;
   transition: 0.5s;
   color: #40513b;
   margin-top: 10px;
+  float: left;
 }
 
 .col-5:hover {
@@ -430,7 +429,6 @@ h3.daftar-wisata {
 .col-4 {
   width: 13.2em;
   height: 320px;
-  float: left;
   padding: 0px;
   box-sizing: border-box;
   border-radius: 15px;
@@ -438,6 +436,7 @@ h3.daftar-wisata {
   margin: 10px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2), 0px -2px 6px rgba(0, 0, 0, 0.1);
   background-color: #fff;
+  float: left;
 }
 .col-4:hover {
   transform: scale(1.03);
